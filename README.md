@@ -1,3 +1,5 @@
+[中文说明](https://github.com/pakecalvs/defense_xss/wiki/defense.js%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)
+=====
 What is defense.js?
 =====
 
@@ -7,6 +9,7 @@ the encode() use the esapi of OWASP，and the fiter() is user-defined.
 
 How to use?
 =====
+just include the defense.js in your .html files,then use the following methods. 
 
 1.filter()
 -----
