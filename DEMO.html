@@ -1,0 +1,99 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" language="JavaScript" src="http://127.0.0.1/defense.js"></script>
+<body>
+<script>
+//defense, use filter().
+function testfilter(){
+var input=document.getElementById("evil_input").value;
+input=filter(input);
+document.write(input);
+}
+
+
+//defense,use encode() before outputing.
+function testhtml(){
+var input=document.getElementById("evil_input").value;
+input=encode_HTML(input);
+alert(input);
+document.write(input);
+}
+
+function testhtmlattr(){
+var input=document.getElementById("evil_input").value;
+input=encode_HTMLATTR(input);
+alert(input);
+evil_input="<input name=\"dasdas\" value=\""+input+"\"/>";
+document.write(evil_input);
+}
+function testcss(){
+var input=document.getElementById("evil_input").value;
+input=encode_CSS(input);
+alert(input);
+as="<p style=\""+input+"\">";
+document.write(as);
+}
+function testjs(){
+var input=document.getElementById("evil_input").value;
+input=encode_JS(input);
+alert(input);
+evil_input="<script>var a=\""+input+"\";<\/script>";
+document.write(evil_input);
+}
+function testurl(){
+var input=document.getElementById("evil_input").value;
+input=encode_URL(input);
+evil_input="<a href=\"http:\/\/ada\.com/"+input+"\">testurl<\/a>";
+document.write(evil_input);
+}
+
+
+
+
+
+
+
+
+//attack.
+function attackhtml(){
+var input=document.getElementById("evil_input").value;
+document.write(input);
+}
+
+function attackhtmlattr(){
+var input=document.getElementById("evil_input").value;
+evil_input="<input name=\"dasdas\" value=\""+input+"\"/>";
+document.write(evil_input);
+}
+function attackcss(){
+var input=document.getElementById("evil_input").value;
+as="<p style=\""+input+"\">";
+document.write(as);
+}
+function attackjs(){
+var input=document.getElementById("evil_input").value;
+evil_input="<script>var a=\""+input+"\";document.write(a);<\/script>";
+document.write(evil_input);
+}
+function attackurl(){
+var input=document.getElementById("evil_input").value;
+evil_input="<a href=\"http:\/\/ada\.com/"+input+"\">testurl<\/a>";
+document.write(evil_input);
+}
+</script>
+输入：<input type="text" id="evil_input"/>
+<button type="button" onclick="testfilter()">使用过滤器过滤输出</button>
+<button type="button" onclick="testhtml()">转义输出到html</button>
+<button type="button" onclick="testhtmlattr()">转义输出到htmlattr</button>
+<button type="button" onclick="testcss()">转义输出到css</button>
+<button type="button" onclick="testjs()">转义输出到js</button>
+<button type="button" onclick="testurl()">转义输出到url参数中</button>
+<br>
+<button type="button" onclick="attackhtml()">直接输出到html</button>
+<button type="button" onclick="attackhtmlattr()">直接输出到htmlattr</button>
+<button type="button" onclick="attackcss()">直接输出到css</button>
+<button type="button" onclick="attackjs()">直接输出到js</button>
+<button type="button" onclick="attackurl()">直接输出到url参数中</button>
+</body>
+</html>
+
