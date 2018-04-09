@@ -69,7 +69,7 @@ In addition to Arabic numerals and letters, all other characters are encoded as 
 
  2.5 Encoding with encode_URL() Before Output to url params.
  Evil_input is a string, the return value is the escaped string
- For example: <a href="http://www.abcd.com?param=...URL encoding before inserting untrusted data...">Link Content</a>
+ For example: <\a href="http://www.abcd.com?param=...URL encoding before inserting untrusted data...">Link Content<\/a>
 
 rule:
 In addition to Arabic numerals and letters, all other characters are encoded as long as the character's ASCII code is less than 256. The output format after encoding is %HH (starting with %, HH refers to the hexadecimal number corresponding to the character), the encoding format of the Chinese character is %uHH (starting with %u, HH refers to the unicode of the character. Hexadecimal number).
