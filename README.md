@@ -79,4 +79,4 @@ rule:
 In addition to Arabic numerals and letters, all other characters are encoded as long as the character's ASCII code is less than 256. The output format after encoding is %HH (starting with %, HH refers to the hexadecimal number corresponding to the character), the encoding format of the Chinese character is %uHH (starting with %u, HH refers to the unicode of the character. Hexadecimal number).
 For @ * _ + - ./ these 7 characters are not processed.
 
-(Just see the DEMO!)[https://github.com/pakecalvs/defense_xss/blob/master/DEMO.html]
+[Just see the DEMO!](https://github.com/pakecalvs/defense_xss/blob/master/DEMO.html)
