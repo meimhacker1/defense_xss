@@ -1,5 +1,7 @@
 [中文说明](https://github.com/pakecalvs/defense_xss/wiki/defense.js%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)
 =====
+[Just see the DEMO!](https://github.com/pakecalvs/defense_xss/blob/master/DEMO.html)
+=====
 What is defense.js?
 =====
 
@@ -81,5 +83,3 @@ In addition to Arabic numerals and letters, all other characters are encoded as 
 rule:
 In addition to Arabic numerals and letters, all other characters are encoded as long as the character's ASCII code is less than 256. The output format after encoding is %HH (starting with %, HH refers to the hexadecimal number corresponding to the character), the encoding format of the Chinese character is %uHH (starting with %u, HH refers to the unicode of the character. Hexadecimal number).
 For @ * _ + - ./ these 7 characters are not processed.
-
-[Just see the DEMO!](https://github.com/pakecalvs/defense_xss/blob/master/DEMO.html)
